@@ -19,6 +19,7 @@ export class RoomsService {
   }
 
   async findAll(userId:string): Promise<Room[]> {
+ 
     return this.roomModel.find({ isPrivate: false }).populate('createdBy', 'username displayName').exec();
   }
 
